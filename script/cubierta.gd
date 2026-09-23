@@ -124,7 +124,7 @@ func mostrarminas(pos):
 			set_cell(banderas[j],0,errorban,0)
 func limpiarlibre():
 	for i in range(destapar.size()):
-		if get_cell_atlas_coords(destapar[i]) == Vector2i(-1,-1):
+		if get_cell_source_id(destapar[i]) == -1:
 			contorno(destapar[i])
 #			condicionvictoria()
 func contorno(centro):

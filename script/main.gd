@@ -139,7 +139,6 @@ func reiniciar():
 	$campo/cubierta/confeti.parar_confeti()
 	$campo/cubierta/explosion.parar_explosion()
 	
-	
 func derrota():
 	$interfaz/Estado.text = "Has perdido :("
 	$Timer.stop()
