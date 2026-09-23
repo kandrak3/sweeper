@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnp0vp4s7f3m3"]
+
+[ext_resource type="TileSet" uid="uid://doom73gkaw5r0" path="res://spritesx16/new_tile_set.tres" id="1_4v3v6"]
+[ext_resource type="Script" uid="uid://b0wfljusi4585" path="res://script/cubierta.gd" id="2_7ul2i"]
+
+[node name="cubierta" type="TileMapLayer"]
+tile_set = ExtResource("1_4v3v6")
+script = ExtResource("2_7ul2i")

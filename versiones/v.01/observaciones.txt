@@ -1,0 +1,13 @@
+Observaciones
+	victoria
+		-no se activa si se realiza con limpieza de celdas.
+		-Confeti no es cantidad suficiente para los mapas grandes
+	derrota
+		-Explosion solo genera una unica por derrota
+	interfaz	
+		-Antes del menu de pausa da opcion a clicker dificultades, alterando el menu mostrar y timer
+Ideas por implementar
+	-Temas diferentes esquemas de colores
+	-Hover sobre numero resalte el contorno
+	-Texto de instruccion que sea interactivo, comentarios tipo clippy
+	-Se puede evitar que haya adivinaciones? hacer un solver

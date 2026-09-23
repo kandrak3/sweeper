@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy2qvuwon5rlq"]
+
+[ext_resource type="TileSet" uid="uid://doom73gkaw5r0" path="res://spritesx16/new_tile_set.tres" id="1_a751m"]
+[ext_resource type="Script" uid="uid://38m3lt0y7dkq" path="res://script/campo.gd" id="2_uvc88"]
+
+[node name="campo" type="TileMapLayer"]
+tile_set = ExtResource("1_a751m")
+script = ExtResource("2_uvc88")

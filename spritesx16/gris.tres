@@ -1,0 +1,49 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://boegluc7on1bw"]
+
+[ext_resource type="Texture2D" uid="uid://dg8awwxrvwnsj" path="res://spritesx16/atlasestilo.png" id="1_sfbr8"]
+[ext_resource type="Texture2D" uid="uid://k0t7prwcxxnx" path="res://sfx/atlas.png" id="2_38gr3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpv73"]
+texture = ExtResource("1_sfbr8")
+margins = Vector2i(4, 4)
+separation = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xmf4"]
+resource_name = "celdas"
+texture = ExtResource("2_38gr3")
+margins = Vector2i(4, 4)
+separation = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[resource]
+sources/2 = SubResource("TileSetAtlasSource_3xmf4")
+sources/0 = SubResource("TileSetAtlasSource_jpv73")
