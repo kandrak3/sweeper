@@ -16,9 +16,13 @@ var minado :Array[Vector2i]= []
 var celdas:Array[Vector2i]=[]
 var vacias:Array[Vector2i]=[]
 var ceros :Array[Vector2i]=[]
+#tema
+var tema: int = 0
 #llamado ingreso primera vez
 func _ready():
 	reiniciar()
+func color(hue):
+	modulate = hue
 func reiniciar():
 	clear()
 	minado.clear()
@@ -68,6 +72,8 @@ func contar(libre, alrededor):
 		
 func numerar(libre,contador):
 	if not minado.has(libre): match contador:
+		0:
+			set_cell(libre,0,vacia,0)
 		1: 
 			set_cell(libre,0,c1,0)
 		2: 
@@ -84,11 +90,10 @@ func numerar(libre,contador):
 			set_cell(libre,0,c7,0)
 		8: 
 			set_cell(libre,0,c8,0)
-
 func nada():
 	for y in range(0, get_parent().filas):
 		for x in range(0, get_parent().columnas):
 			var celda = Vector2i(x, y)
-			if get_cell_atlas_coords(celda) == Vector2i(-1,-1):
+			if get_cell_source_id(celda) == -1:
 				set_cell(celda,0,vacia,0)
 				ceros.append(celda)

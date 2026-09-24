@@ -18,7 +18,6 @@ signal banderamenos
 signal explosion
 func _ready():
 	reiniciar()
-	
 func reiniciar():
 	clear()
 	destapar.clear()

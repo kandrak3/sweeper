@@ -13,7 +13,7 @@ var restantes:int
 var inicio:bool
 var pausado = false
 signal confeti
-
+signal cambiartema
 #mapa
 var minado := []
 var vacias:=[]
@@ -222,3 +222,22 @@ func _on_reiniciar_pressed() -> void:
 func _on_reanudar_pressed() -> void:
 	get_tree().paused = false
 	$Node/pausado.visible = false
+
+func _tema(tinte: int) -> void:
+	var hue : Color
+	match tinte:
+		0:
+			hue = Color(1,1,1,1)
+		1: 
+			hue = Color(1.0, 0.314, 0.314)
+		2: 
+			hue = Color(0.314, 1.0, 0.314)
+		3: 
+			hue = Color(0.569, 0.157, 0.8)
+		4: 
+			hue = Color(1.0, 0.58, 0.0)
+		5: 
+			hue = Color(0.925, 0.949, 0.075)
+		6: 
+			hue = Color(0.909, 0.197, 0.558)
+	cambiartema.emit(hue)
