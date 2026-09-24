@@ -27,7 +27,6 @@ func reiniciar():
 	ceros.clear()
 	dispersion()
 	segura()
-	#contar2()
 	nada()
 func dispersion():
 	for i in range(get_parent().cantidad):
@@ -93,44 +92,3 @@ func nada():
 			if get_cell_atlas_coords(celda) == Vector2i(-1,-1):
 				set_cell(celda,0,vacia,0)
 				ceros.append(celda)
-
-
-#func contar2():
-#	for i in range(vacias.size()):
-#		var alrededor:= []
-#		alrededor.clear()
-#		var libre = vacias[i] 
-#		for j in range(-1,2):
-#			for k in range(-1,2):
-#				var contorno= Vector2i(libre.x-j,libre.y-k)
-#				while alrededor.size() >=9:
-#					contorno= Vector2i(libre.x-j,libre.y-k)
-#				alrededor.append(contorno)
-#				var contador:=[]
-#				contador.clear()
-#				for a in range(alrededor.size()):
-#					var control = alrededor[a]
-#					if minado.has(control): 
-#						contador.append(control)
-#						if not minado.has(libre): match contador.size():
-#							0: 
-#								set_cell(libre,0,vacia,0)
-#							1: 
-#								set_cell(libre,0,c1,0)
-#							2: 
-#								set_cell(libre,0,c2,0)
-#							3: 
-#								set_cell(libre,0,c3,0)
-#							4: 
-#								set_cell(libre,0,c4,0)
-#							5: 
-#								set_cell(libre,0,c5,0)
-#							6: 
-#								set_cell(libre,0,c6,0)
-#							7: 
-#								set_cell(libre,0,c7,0)
-#							8: 
-#								set_cell(libre,0,c8,0)
-#print(minado)
-
-	

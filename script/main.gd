@@ -148,7 +148,7 @@ func derrota():
 	$interfaz/dificultad/facil.disabled = false
 	$interfaz/dificultad/dificil.disabled = false
 	$interfaz/dificultad/medio.disabled = false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	$Node/pausado/pausa/Label.text = "Has perdido :("
 	$Node/pausado.visible = true
 func victoria():
@@ -162,7 +162,7 @@ func victoria():
 	$interfaz/dificultad/medio.disabled = false
 	$victoria.play()
 	confeti.emit()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	$Node/pausado/pausa/Label.text = "Has ganado :)"
 	$Node/pausado.visible = true
 func _on_filas_value_changed(value: float) -> void:
@@ -218,6 +218,7 @@ func _on_salir_pressed() -> void:
 func _on_reiniciar_pressed() -> void:
 	reiniciar() 
 	$Node/pausado.visible = false
+	get_tree().paused = false
 func _on_reanudar_pressed() -> void:
 	get_tree().paused = false
 	$Node/pausado.visible = false
