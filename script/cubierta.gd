@@ -142,7 +142,6 @@ func comprobar():
 			var celda = Vector2i(x,y)
 			if get_cell_atlas_coords(celda) == Vector2i(-1,-1):
 				reveladas.append(celda)
-	print(get_parent().vacias.size(), "=" , reveladas.size())
 #func condicionvictoria():
 #	if reveladas.size()==get_parent().vacias.size():
 #		ganar()
