@@ -46,7 +46,7 @@ func principiante():
 	$interfaz/custom/COLUMNAS.set_value_no_signal(8)
 	$interfaz/custom/MINAS.min_value = 1
 	$interfaz/custom/MINAS.max_value = int(columnas*filas*0.25)
-	$interfaz/custom/MINAS.set_value_no_signal(10)
+	$interfaz/custom/MINAS.set_value(10)
 	$interfaz/custom/FILAS.visible = false
 	$interfaz/custom/COLUMNAS.visible = false
 	$interfaz/custom/MINAS.visible = false
@@ -67,7 +67,7 @@ func intermedio():
 	$interfaz/custom/COLUMNAS.set_value_no_signal(16)
 	$interfaz/custom/MINAS.min_value = 1
 	$interfaz/custom/MINAS.max_value = int(columnas*filas*0.25)
-	$interfaz/custom/MINAS.set_value_no_signal(40)
+	$interfaz/custom/MINAS.set_value(40)
 	$interfaz/custom/FILAS.visible = false
 	$interfaz/custom/COLUMNAS.visible = false
 	$interfaz/custom/MINAS.visible = false
@@ -88,7 +88,7 @@ func experto():
 	$interfaz/custom/COLUMNAS.set_value_no_signal(30)
 	$interfaz/custom/MINAS.min_value = 1
 	$interfaz/custom/MINAS.max_value = int(columnas*filas*0.25)
-	$interfaz/custom/MINAS.set_value_no_signal(99)
+	$interfaz/custom/MINAS.set_value(99)
 	$interfaz/custom/FILAS.visible = false
 	$interfaz/custom/COLUMNAS.visible = false
 	$interfaz/custom/MINAS.visible = false

@@ -31,7 +31,7 @@ func reiniciar():
 	ceros.clear()
 	dispersion()
 	segura()
-	nada()
+#minar mapa
 func dispersion():
 	for i in range(get_parent().cantidad):
 		var celdaminada = Vector2i(randi_range(0, get_parent().columnas - 1), randi_range(0, get_parent().filas - 1))
@@ -51,6 +51,7 @@ func segura():
 	for i in range(0, (get_parent().columnas * get_parent().filas)-(get_parent().cantidad)):
 		var libre = vacias[i] 
 		contorno(libre)
+		nada(libre)
 func contorno(libre):
 	var alrededor:= []
 	alrededor.clear()
@@ -69,11 +70,8 @@ func contar(libre, alrededor):
 			minascercanas.append(control)
 			contador = minascercanas.size()
 			numerar(libre,contador)
-		
 func numerar(libre,contador):
 	if not minado.has(libre): match contador:
-		0:
-			set_cell(libre,0,vacia,0)
 		1: 
 			set_cell(libre,0,c1,0)
 		2: 
@@ -90,10 +88,7 @@ func numerar(libre,contador):
 			set_cell(libre,0,c7,0)
 		8: 
 			set_cell(libre,0,c8,0)
-func nada():
-	for y in range(0, get_parent().filas):
-		for x in range(0, get_parent().columnas):
-			var celda = Vector2i(x, y)
-			if get_cell_source_id(celda) == -1:
-				set_cell(celda,0,vacia,0)
-				ceros.append(celda)
+func nada(celda):
+	if get_cell_source_id(celda) == -1:
+		set_cell(celda,0,vacia,0)
+		ceros.append(celda)
