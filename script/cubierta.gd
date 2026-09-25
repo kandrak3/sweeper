@@ -18,7 +18,6 @@ signal banderamenos
 signal explosion
 func _ready():
 	reiniciar()
-	
 func reiniciar():
 	clear()
 	destapar.clear()
@@ -124,7 +123,7 @@ func mostrarminas(pos):
 			set_cell(banderas[j],0,errorban,0)
 func limpiarlibre():
 	for i in range(destapar.size()):
-		if get_cell_atlas_coords(destapar[i]) == Vector2i(-1,-1):
+		if get_cell_source_id(destapar[i]) == -1:
 			contorno(destapar[i])
 #			condicionvictoria()
 func contorno(centro):
@@ -143,7 +142,6 @@ func comprobar():
 			var celda = Vector2i(x,y)
 			if get_cell_atlas_coords(celda) == Vector2i(-1,-1):
 				reveladas.append(celda)
-	print(get_parent().vacias.size(), "=" , reveladas.size())
 #func condicionvictoria():
 #	if reveladas.size()==get_parent().vacias.size():
 #		ganar()

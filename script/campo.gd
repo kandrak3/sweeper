@@ -16,9 +16,13 @@ var minado :Array[Vector2i]= []
 var celdas:Array[Vector2i]=[]
 var vacias:Array[Vector2i]=[]
 var ceros :Array[Vector2i]=[]
+#tema
+var tema: int = 0
 #llamado ingreso primera vez
 func _ready():
 	reiniciar()
+func color(hue):
+	modulate = hue
 func reiniciar():
 	clear()
 	minado.clear()
@@ -27,8 +31,7 @@ func reiniciar():
 	ceros.clear()
 	dispersion()
 	segura()
-	#contar2()
-	nada()
+#minar mapa
 func dispersion():
 	for i in range(get_parent().cantidad):
 		var celdaminada = Vector2i(randi_range(0, get_parent().columnas - 1), randi_range(0, get_parent().filas - 1))
@@ -48,6 +51,7 @@ func segura():
 	for i in range(0, (get_parent().columnas * get_parent().filas)-(get_parent().cantidad)):
 		var libre = vacias[i] 
 		contorno(libre)
+		nada(libre)
 func contorno(libre):
 	var alrededor:= []
 	alrededor.clear()
@@ -66,7 +70,6 @@ func contar(libre, alrededor):
 			minascercanas.append(control)
 			contador = minascercanas.size()
 			numerar(libre,contador)
-		
 func numerar(libre,contador):
 	if not minado.has(libre): match contador:
 		1: 
@@ -85,52 +88,7 @@ func numerar(libre,contador):
 			set_cell(libre,0,c7,0)
 		8: 
 			set_cell(libre,0,c8,0)
-
-func nada():
-	for y in range(0, get_parent().filas):
-		for x in range(0, get_parent().columnas):
-			var celda = Vector2i(x, y)
-			if get_cell_atlas_coords(celda) == Vector2i(-1,-1):
-				set_cell(celda,0,vacia,0)
-				ceros.append(celda)
-
-
-#func contar2():
-#	for i in range(vacias.size()):
-#		var alrededor:= []
-#		alrededor.clear()
-#		var libre = vacias[i] 
-#		for j in range(-1,2):
-#			for k in range(-1,2):
-#				var contorno= Vector2i(libre.x-j,libre.y-k)
-#				while alrededor.size() >=9:
-#					contorno= Vector2i(libre.x-j,libre.y-k)
-#				alrededor.append(contorno)
-#				var contador:=[]
-#				contador.clear()
-#				for a in range(alrededor.size()):
-#					var control = alrededor[a]
-#					if minado.has(control): 
-#						contador.append(control)
-#						if not minado.has(libre): match contador.size():
-#							0: 
-#								set_cell(libre,0,vacia,0)
-#							1: 
-#								set_cell(libre,0,c1,0)
-#							2: 
-#								set_cell(libre,0,c2,0)
-#							3: 
-#								set_cell(libre,0,c3,0)
-#							4: 
-#								set_cell(libre,0,c4,0)
-#							5: 
-#								set_cell(libre,0,c5,0)
-#							6: 
-#								set_cell(libre,0,c6,0)
-#							7: 
-#								set_cell(libre,0,c7,0)
-#							8: 
-#								set_cell(libre,0,c8,0)
-#print(minado)
-
-	
+func nada(celda):
+	if get_cell_source_id(celda) == -1:
+		set_cell(celda,0,vacia,0)
+		ceros.append(celda)

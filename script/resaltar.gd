@@ -16,7 +16,7 @@ func sombreado(resaltar):
 		amplio(resaltar)
 func amplio(resaltar):
 	var numero =[]
-	if get_parent().reveladas.has(resaltar):
+	if get_parent().get_parent().get_parent().inicio == false and get_parent().reveladas.has(resaltar):
 		for x in range(get_parent().get_parent().get_parent().columnas):
 			for y in range(get_parent().get_parent().get_parent().filas):
 				var celda = Vector2i(x,y)
